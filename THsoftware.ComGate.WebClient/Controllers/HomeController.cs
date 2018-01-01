@@ -66,7 +66,12 @@ namespace THsoftware.ComGate.WebClient.Controllers
 			BaseComGatePayment payment = PaymentFactory.GetBasePayment(cents, model.ReferenceId, model.Label, Core.Domain.Enums.PaymentMethods.ALL);
 
 			Payer customer = new Payer();
-			customer.Contact = new Contact() { Email = model.Email, Name = model.Name };
+
+			customer.Contact = new Contact()
+			{
+				Email = model.Email,
+				Name = model.Name
+			};
 
 			var response = await comGateAPI.CreatePayment(payment, customer, WebConfigurationManager.AppSettings["api"]);
 
