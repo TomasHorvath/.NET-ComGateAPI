@@ -1,0 +1,41 @@
+﻿@model THsoftware.ComGate.WebClient.Models.BasicPaymentViewModel 
+@{
+    ViewBag.Title = "CreatePayment";
+}
+
+
+<div class="container">
+	<h2>Vytvoření platby na pozadí a přesměrování na platební portál</h2>
+	
+	@using (Html.BeginForm())
+	{	
+			<div class="form-group">
+				<label for="email">Email address:</label>
+				@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })  
+				
+			</div>
+			<div class="form-group">
+				<label for="pwd">Jméno zákazníka:</label>
+				@Html.TextBoxFor(m => m.Name, new { @class = "form-control" }) 
+			</div>
+
+			<div class="form-group">
+				<label for="pwd">Cena:</label>
+				@Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label for="pwd">Referenční ID:</label>
+				@Html.TextBoxFor(m => m.ReferenceId, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label for="pwd">Popis platby:</label>
+				@Html.TextBoxFor(m => m.Label, new { @class = "form-control" })
+			</div>
+			<button type="submit" class="btn btn-default">Vytvořit platbu</button>
+	}
+
+</div>
+
+

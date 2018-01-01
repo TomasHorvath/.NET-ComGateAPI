@@ -1,0 +1,15 @@
+merchant:134722
+test:true
+price:4500
+curr:CZK
+label:Krátký popis platby
+refId:aa5b6c61-8a81-4253-b07c-e281ce216a4e
+cat:PHYSICAL
+method:CARD_CZ_BS
+email:thsoftware@gmail.com
+name:Jméno zákazníka
+transId:3MCN-DYD3-ZXVQ
+secret:r97wt1ZDS5nEklHQwsjJptaXP8EvAqo6
+status:CANCELLED
+fee:unknown
+vs:38344123

@@ -1,0 +1,13 @@
+merchant:134722
+test:true
+price:12300
+curr:CZK
+label:Krátký popis platby
+refId:7747bbb5-22f3-4f5c-a876-d288bad66bdc
+cat:PHYSICAL
+email:thsoftware@gmail.com
+name:Jméno zákazníka
+transId:UXVN-21OL-SKEC
+secret:r97wt1ZDS5nEklHQwsjJptaXP8EvAqo6
+status:CANCELLED
+fee:unknown

@@ -1,0 +1,46 @@
+﻿@model THsoftware.ComGate.Core.Domain.Models.ApiResponse<THsoftware.ComGate.Core.Domain.Models.PaymentMethodsResponse>
+
+@{
+	ViewBag.Title = "Methods";
+}
+
+<div class="container">
+	<h2>Dostupné platební metody</h2>
+	<p>Seznam platebních metod je dostupný i ze zákaznické zóny</p>
+
+	@if (Model.Success)
+	{
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Název metody</th>
+					<th>Logo</th>
+					<th>Popis</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var method in Model.Response.methods)
+				{
+					<tr>
+						<td>@method.id</td>
+						<td>@method.name</td>
+						<td><img src="@method.logo" /></td>
+						<td>@method.description</td>
+					</tr>
+				}
+
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<div class="alert alert-danger">
+			<strong>@Model.Code.ToString()</strong> 
+		</div>
+
+		<div class="alert alert-danger">
+			<strong>@Model.Message</strong>
+		</div>
+	}
+</div>

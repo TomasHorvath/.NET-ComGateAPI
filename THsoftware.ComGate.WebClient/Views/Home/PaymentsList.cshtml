@@ -1,0 +1,51 @@
+﻿@model  List<THsoftware.ComGate.WebClient.Models.PaymentViewModel>
+@{
+	ViewBag.Title = "PaymentsList";
+}
+
+
+
+<div class="container">
+	<h2>Přehled plateb</h2>
+	<p>informace o platebních transakcí</p>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>ID transakce</th>
+				<th>Referenční ID</th>
+				<th>Částka</th>
+				<th>akce</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var row in Model)
+			{
+				<tr>
+					<td>@row.TransId</td>
+					<td>@row.RefId</td>
+					<td>@row.Amount</td>
+					<td>
+						@if (row.State == THsoftware.ComGate.Core.Domain.Enums.PaymentState.CANCELLED)
+						{
+							<span class="alert-danger"> Platba byla stornována </span>
+						}
+						else
+						{
+							if (row.State == THsoftware.ComGate.Core.Domain.Enums.PaymentState.AUTHORIZED)
+							{
+								<a href="@Url.Action("GetPaymentStatus", new { transId = row.TransId })" class="btn btn-success">potvrzení předautorizace</a>
+								<a href="@Url.Action("GetPaymentStatus", new { transId = row.TransId })" class="btn btn-danger">zrušení předautorizace</a>
+							}
+							<a href="@Url.Action("RefundPayment", new { transId = row.TransId })" class="btn btn-warning">Refundace</a>
+
+							<a href="@Url.Action("GetPaymentStatus", new { transId = row.TransId })" class="btn btn-info">Detail</a>
+						}
+					</td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+</div>
+

@@ -1,0 +1,35 @@
+﻿@model THsoftware.ComGate.WebClient.Models.RefundPaymentViewModel
+@{
+	ViewBag.Title = "RefundPayment";
+}
+
+
+
+<div class="container">
+	<h2>Refundace platby</h2>
+
+	@using (Html.BeginForm())
+	{
+		<div class="form-group">
+			<label for="email">Částka k vrácení:</label>
+			@Html.TextBoxFor(m => m.Amount, new { @class = "form-control" })
+
+		</div>
+		<div class="form-group">
+			<label for="pwd">Měna:</label>
+			@Html.DropDownListFor(m => m.Currency, Model.Currencies, new { @class = "form-control" })
+		</div>
+
+		<div class="form-group">
+			<label for="pwd">Cena:</label>
+			@Html.TextBoxFor(m => m.TransactionId, new { @class = "form-control", @readonly = "readonly" })
+		</div>
+
+		<button type="submit" class="btn btn-success">Vrácení částky</button>
+	}
+
+</div>
+
+
+
+

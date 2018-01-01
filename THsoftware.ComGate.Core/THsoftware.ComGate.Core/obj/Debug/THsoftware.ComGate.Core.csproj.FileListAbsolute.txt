@@ -1,0 +1,5 @@
+c:\users\tomáš horváth\documents\visual studio 2017\Projects\THsoftware.ComGate\THsoftware.ComGate.Core\THsoftware.ComGate.Core\bin\Debug\THsoftware.ComGate.Core.dll
+c:\users\tomáš horváth\documents\visual studio 2017\Projects\THsoftware.ComGate\THsoftware.ComGate.Core\THsoftware.ComGate.Core\bin\Debug\THsoftware.ComGate.Core.pdb
+c:\users\tomáš horváth\documents\visual studio 2017\Projects\THsoftware.ComGate\THsoftware.ComGate.Core\THsoftware.ComGate.Core\obj\Debug\THsoftware.ComGate.Core.csproj.CoreCompileInputs.cache
+c:\users\tomáš horváth\documents\visual studio 2017\Projects\THsoftware.ComGate\THsoftware.ComGate.Core\THsoftware.ComGate.Core\obj\Debug\THsoftware.ComGate.Core.dll
+c:\users\tomáš horváth\documents\visual studio 2017\Projects\THsoftware.ComGate\THsoftware.ComGate.Core\THsoftware.ComGate.Core\obj\Debug\THsoftware.ComGate.Core.pdb

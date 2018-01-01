@@ -1,0 +1,33 @@
+﻿@model List<KeyValuePair<string, string>> 
+@{
+    ViewBag.Title = "PaymentCallback";
+}
+
+
+<div class="container">
+	<h2>Stav platební transkace</h2>
+	<p>informace o platebni transakci</p>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Klíč</th>
+				<th>Hodnota</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var row in Model)
+			{
+				<tr>
+					<td>@row.Key</td>
+					<td>@row.Value</td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+</div>
+
+
+
+
+

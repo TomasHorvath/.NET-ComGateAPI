@@ -1,0 +1,68 @@
+﻿@model THsoftware.ComGate.WebClient.Models.AdvancedPaymentViewModel
+@{
+	ViewBag.Title = "CreatePayment";
+}
+
+
+<div class="container">
+	<h2>Vytvoření platby na pozadí a přesměrování na platební portál</h2>
+
+	@using (Html.BeginForm())
+	{
+		<div class="form-group">
+			<label for="email">Email address:</label>
+			@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+		</div>
+		<div class="form-group">
+			<label for="pwd">Jméno zákazníka:</label>
+			@Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+		</div>
+
+		<div class="form-group">
+			<label for="pwd">Cena:</label>
+			@Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+		</div>
+
+			<div class="form-group">
+				<label for="pwd">Referenční ID:</label>
+				@Html.TextBoxFor(m => m.ReferenceId, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label for="pwd">Popis platby:</label>
+				@Html.TextBoxFor(m => m.Label, new { @class = "form-control" })
+			</div>
+			<div class="form-group">
+				<label for="pwd">Platební metoda:</label>
+				<br />
+				@foreach (var method in Model.Methods)
+				{
+					<img src="@method.logo" />   @Html.RadioButton("SelectedMethod", method.id)   @(method.name)<br />
+				}
+			</div>
+
+			<div class="form-group">
+				<label for="pwd">Měna:</label>
+				@Html.DropDownListFor(m => m.SelectedCurrency, Model.Currencies, new { @class = "form-control" })
+			</div>
+
+			<div class="form-group">
+				<label for="pwd">Předautorizace :</label>
+				@Html.EditorFor(m => m.PreAuth, new { @class = "form-control" })
+			</div>
+
+
+			<div class="form-group">
+				<label for="pwd">EET :</label>
+				@Html.TextBoxFor(m => m.EETData, new { @class = "form-control" ,@multiline="multiline" })
+			</div>
+
+
+
+			<button type="submit" class="btn btn-default">Vytvořit platbu</button>
+	}
+
+</div>
+
+

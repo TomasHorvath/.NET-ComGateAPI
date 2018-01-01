@@ -1,0 +1,15 @@
+merchant:134722
+test:true
+price:150000
+curr:CZK
+label:Krátký popis platby
+refId:b391e7c7-c8b7-4ce2-8be9-99af8cf2e8d4
+cat:PHYSICAL
+method:CARD_CZ_BS
+email:thsoftware@gmail.com
+name:Tomas Horvath
+transId:OMIL-QFBM-FNW4
+secret:r97wt1ZDS5nEklHQwsjJptaXP8EvAqo6
+status:PAID
+fee:unknown
+vs:38344018

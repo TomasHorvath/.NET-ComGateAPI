@@ -1,0 +1,33 @@
+﻿
+@{
+	ViewBag.Title = "CancelPreAuth";
+}
+
+
+<div class="container">
+	<h2>Potvrzení předautorizace platby</h2>
+
+	@if (Model.Success)
+	{
+		<div class="alert alert-success">
+			<strong>@Model.Code.ToString()</strong>
+		</div>
+
+		<div class="alert alert-success">
+			<strong>@Model.Message</strong>
+		</div>
+	}
+	else
+	{
+		<div class="alert alert-danger">
+			<strong>@Model.Code.ToString()</strong>
+		</div>
+
+		<div class="alert alert-danger">
+			<strong>@Model.Message</strong>
+		</div>
+	}
+
+</div>
+
+

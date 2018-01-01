@@ -1,0 +1,79 @@
+﻿@model THsoftware.ComGate.Core.Domain.Models.ApiResponse<THsoftware.ComGate.Core.Domain.Models.PaymentStatusResponse>
+
+@{
+	ViewBag.Title = "Status";
+}
+
+<div class="container">
+	<h2>Status platební transakce</h2>
+
+	@if (Model.Success)
+	{
+		<table class="table table-striped">
+			<tbody>
+
+				<tr>
+					<td>Email</td>
+					<td>@Model.Response.email</td>
+				</tr>
+				<tr>
+					<td>ID transakce</td>
+					<td>@Model.Response.transId</td>
+				</tr>
+				<tr>
+					<td>referenční ID</td>
+					<td>@Model.Response.refId</td>
+				</tr>
+
+				<tr>
+					<td>Status</td>
+					<td>@Model.Response.Status</td>
+				</tr>
+
+				<tr>
+					<td>Payer Name</td>
+					<td>@Model.Response.payerName</td>
+				</tr>
+				<tr>
+					<td>Variabilní symbol</td>
+					<td>@Model.Response.vs</td>
+				</tr>
+
+
+				<tr>
+					<td>Price</td>
+					<td>@Model.Response.price</td>
+				</tr>
+				
+				<tr>
+					<td>Měna</td>
+					<td>@Model.Response.Currency</td>
+				</tr>
+
+				<tr>
+					<td>EET</td>
+					<td>@Model.Response.eetData</td>
+				</tr>
+
+
+			</tbody>
+		</table>
+
+		if (Model.Response.Status == THsoftware.ComGate.Core.Domain.Enums.PaymentState.AUTHORIZED)
+		{
+			<a href="@Url.Action("CapturePreAuth",new { transId = Model.Response.transId })" class="btn btn-success"> Autorizovat platbu (dokončit) </a>
+			<a href="@Url.Action("CancelPreAuth",new { transId = Model.Response.transId })" class="btn btn-danger"> Zrušit platbu (storno platby) </a>
+		}
+
+	}
+	else
+	{
+		<div class="alert alert-danger">
+			<strong>@Model.Code.ToString()</strong>
+		</div>
+
+		<div class="alert alert-danger">
+			<strong>@Model.Message</strong>
+		</div>
+	}
+</div>
